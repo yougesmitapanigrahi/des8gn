@@ -1,0 +1,204 @@
+<body class="min-h-screen bg-yellow-200 overflow-x-hidden">
+  <nav
+    class="relative w-[99%] mx-auto py-2 px-6 border-b border-amber-500/20 rounded-tr-[50px] rounded-bl-[50px] rounded-br-lg bg-yellow-400"
+  >
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <!-- Logo image can be inserted here -->
+        <div class="flex flex-col">
+          <span class="text-white text-3xl font-bold tracking-tight leading-none">DESIGN BRICC</span>
+        </div>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-10 uppercase font-medium tracking-wide text-[18px]">
+        <a href="index.html" class="relative text-white group">
+          <span>Home</span>
+          <span
+            class="absolute left-0 -bottom-1 w-0 h-[2px] bg-black group-hover:w-full transition-all duration-300"
+          ></span>
+        </a>
+        <a href="about.html" class="relative text-white group hover:text-white">
+          <span>About Us</span>
+          <span
+            class="absolute left-0 -bottom-1 w-0 h-[2px] bg-black group-hover:w-full transition-all duration-300"
+          ></span>
+        </a>
+
+        <!-- Dropdown -->
+        <div class="relative group md:z-50"> <!-- z-50 only on md+ -->
+          <button
+            class="flex items-center text-white group-hover:text-white relative"
+            aria-haspopup="true"
+            aria-expanded="false"
+            id="dropdownBtn"
+          >
+            <span>OUR PROJECTS</span>
+            <span
+              class="absolute left-0 -bottom-1 w-0 h-[2px] bg-white group-hover:w-full transition-all duration-300"
+            ></span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="ml-1 h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                d="m6 9 6 6 6-6"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <div
+            class="absolute left-0 mt-2 w-56 bg-yellow-300/95 backdrop-blur-xl text-black rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-amber-500/20 md:z-50"
+          >
+            <div class="py-2">
+              <a
+                href="architecture.html"
+                class="block px-4 py-2 text-sm font-semibold hover:bg-yellow-200 hover:text-white"
+                >ARCHITECTURE</a
+              >
+              <a
+                href="interior.html"
+                class="block px-4 py-2 text-sm font-semibold hover:bg-yellow-200 hover:text-white"
+                >INTERIOR</a
+              >
+              <a
+                href="landscapping.html"
+                class="block px-4 py-2 text-sm font-semibold hover:bg-yellow-200 hover:text-white"
+                >LANDSCAPING</a
+              >
+              <a
+                href="vastu.html"
+                class="block px-4 py-2 text-sm font-semibold hover:bg-yellow-200 hover:text-white"
+                >VASTU CONSULTANT</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <a href="service.html" class="relative text-white hover:text-white group">
+          <span>Services</span>
+          <span
+            class="absolute left-0 -bottom-1 w-0 h-[2px] bg-white group-hover:w-full transition-all duration-300"
+          ></span>
+        </a>
+        <a href="contact.html" class="relative text-white hover:text-white group">
+          <span>Contact</span>
+          <span
+            class="absolute left-0 -bottom-1 w-0 h-[2px] bg-white group-hover:w-full transition-all duration-300"
+          ></span>
+        </a>
+      </div>
+
+      <!-- Hamburger Icon -->
+      <button
+        id="hamburgerBtn"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        class="md:hidden text-black hover:text-white focus:outline-none focus:ring-2 focus:ring-yellow-600 rounded"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobileMenu"
+      class="md:hidden mt-4 px-4 py-6 space-y-2 hidden uppercase font-medium tracking-wide text-[16px] z-50 bg-yellow-400 text-black rounded-lg shadow-lg"
+    >
+      <a
+        href="index.html"
+        class="block py-2 text-black hover:text-black active:text-black hover:bg-white/30 rounded-md px-2"
+        >Home</a
+      >
+      <a
+        href="about.html"
+        class="block py-2 text-black hover:text-black active:text-black hover:bg-white/30 rounded-md px-2"
+        >About Us</a
+      >
+
+      <!-- Collapsible Dropdown -->
+      <details class="group">
+        <summary
+          class="cursor-pointer py-2 text-black flex items-center justify-between hover:text-black active:text-black hover:bg-white/30 px-2 rounded-md"
+        >
+          OUR PROJECT
+          <svg
+            class="w-6 h-6 group-open:rotate-180 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"></path>
+          </svg>
+        </summary>
+        <div
+          class="ml-4 mt-2 space-y-1 text-sm bg-yellow-200 text-black p-4 rounded-md"
+        >
+          <a
+            href="architecture.html"
+            class="block text-black hover:text-black active:text-black hover:bg-white/30 rounded-md px-2 py-1"
+            >ARCHITECTURE</a
+          >
+          <a
+            href="interior.html"
+            class="block text-black hover:text-black active:text-black hover:bg-white/30 rounded-md px-2 py-1"
+            >INTERIOR</a
+          >
+          <a
+            href="landscapping.html"
+            class="block text-black hover:text-black active:text-black hover:bg-white/30 rounded-md px-2 py-1"
+            >LANDSCAPING</a
+          >
+          <a
+            href="vastu.html"
+            class="block text-black hover:text-black active:text-black hover:bg-white/30 rounded-md px-2 py-1"
+            >VASTU CONSULTANT</a
+          >
+        </div>
+      </details>
+
+      <a
+        href="service.html"
+        class="block py-2 text-black hover:text-black active:text-black hover:bg-white/30 rounded-md px-2"
+        >Services</a
+      >
+      <a
+        href="contact.html"
+        class="block py-2 text-black hover:text-black active:text-black hover:bg-white/30 rounded-md px-2"
+        >Contact</a
+      >
+    </div>
+  </nav>
+
+  <!-- Toggle Script -->
+  <script>
+    const hamburger = document.getElementById('hamburgerBtn');
+    const menu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+      hamburger.setAttribute('aria-expanded', !expanded);
+    });
+  </script>
+</body>

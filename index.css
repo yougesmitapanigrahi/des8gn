@@ -1,0 +1,7 @@
+
+  .stroke-black {
+    -webkit-text-stroke: 1px #000;
+  }
+  .stroke-orange-500 {
+    -webkit-text-stroke: 1px #FFA500;
+  }

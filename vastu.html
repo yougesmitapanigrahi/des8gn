@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AA Cvastu Section with Tailwind & AOS</title>
+
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+
+  <style>
+    .image-preview {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 50;
+      padding: 1rem;
+    }
+    .image-preview img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 1rem;
+    }
+    .image-preview .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 51;
+    }
+    body.no-scroll {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="bg-[#FFFFFF] text-black font-sans pt-[1px]">
+  <div id="navbar"></div>
+
+  <script>
+    fetch('nav.html')
+      .then(res => res.text())
+      .then(data => {
+        const navbar = document.getElementById('navbar');
+        navbar.innerHTML = data;
+
+        // Evaluate and execute any scripts inside the fetched HTML
+        const scripts = navbar.querySelectorAll('script');
+        scripts.forEach(script => {
+          const newScript = document.createElement('script');
+          if (script.src) {
+            newScript.src = script.src;
+          } else {
+            newScript.textContent = script.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      });
+  </script>
+</body>
+
+
+  <!-- Section 1 -->
+  <section class="py-16 px-4 max-w-6xl mx-auto mt-[100px]">
+    <div class="flex flex-col-reverse md:flex-row items-center gap-12">
+      <div class="md:w-1/2 space-y-6" data-aos="fade-right">
+        <h2 class="text-3xl font-semibold">Vastu planning</h2>
+        <p class="leading-relaxed">
+          The auditorium has been designed as a ‘shell within a shell’...
+        </p>
+      </div>
+      <div class="md:w-1/2 text-center" data-aos="fade-left">
+        <img
+          src="https://www.mobelinteriors.in/images/1679058083-img2-most-useful-vastu.webp"
+          alt="AA Vastu Rendering"
+          class="w-full rounded-2xl shadow-xl cursor-pointer previewable"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex flex-col md:flex-row items-center gap-8">
+      <div class="md:w-1/2" data-aos="fade-right">
+        <img
+          src="https://assets.mypandit.com/wp-content/uploads/2025/02/vastu-tips-interior-design.webp"
+          alt="Vastu Interior Example"
+          class="w-full rounded-2xl shadow-xl cursor-pointer previewable"
+        />
+      </div>
+      <div class="md:w-1/2" data-aos="fade-left">
+        <h2 class="text-3xl font-bold mb-4">Vastu-Inspired Interior</h2>
+        <p class="text-gray-700 leading-relaxed">
+          This interior has been laid out according to Vastu principles...
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex flex-col md:flex-row items-center gap-8">
+      <div class="md:w-1/2" data-aos="fade-right">
+        <h2 class="text-3xl font-semibold mb-4">Home remedies</h2>
+        <p class="text-gray-700 leading-relaxed">
+          The entrance foyer has been laid out to welcome positive energy...
+        </p>
+      </div>
+      <div class="md:w-1/2" data-aos="fade-left">
+        <img
+          src="https://www.piramalrealty.com/_next/image?url=%2Fimages%2Fblogs%2Fvastu-dosh-7.jpg&w=1920&q=75"
+          alt="Entrance Foyer"
+          class="w-full rounded-2xl shadow-xl cursor-pointer previewable"
+        />
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Image Preview Modal -->
+  <div id="imagePreviewContainer" class="hidden image-preview">
+    <span class="close-btn" onclick="closeImagePreview()">&times;</span>
+    <img id="previewImage" src="" alt="Preview" />
+  </div>
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+
+  <!-- Image Preview Script -->
+  <script>
+    const previewContainer = document.getElementById("imagePreviewContainer");
+    const previewImage = document.getElementById("previewImage");
+
+    document.querySelectorAll(".previewable").forEach(img => {
+      img.addEventListener("click", () => {
+        previewImage.src = img.src;
+        previewContainer.classList.remove("hidden");
+        document.body.classList.add("no-scroll");
+      });
+    });
+
+    function closeImagePreview() {
+      previewContainer.classList.add("hidden");
+      previewImage.src = "";
+      document.body.classList.remove("no-scroll");
+    }
+
+    // Close on outside click or Escape key
+    previewContainer.addEventListener("click", (e) => {
+      if (e.target === previewContainer || e.target.classList.contains("close-btn")) {
+        closeImagePreview();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeImagePreview();
+      }
+    });
+  </script>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+  <script>
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>
+</body>
+</html>

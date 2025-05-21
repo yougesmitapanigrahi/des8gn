@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services Section</title>
+
+  <!-- FontAwesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .stroke-black {
+      -webkit-text-stroke: 1px #000;
+    }
+  </style>
+</head>
+<body class="bg-[#FFFFFF] text-black font-sans pt-[1px]">
+  <div id="navbar"></div>
+
+  <script>
+    fetch('nav.html')
+      .then(res => res.text())
+      .then(data => {
+        const navbar = document.getElementById('navbar');
+        navbar.innerHTML = data;
+
+        const scripts = navbar.querySelectorAll('script');
+        scripts.forEach(script => {
+          const newScript = document.createElement('script');
+          if (script.src) {
+            newScript.src = script.src;
+          } else {
+            newScript.textContent = script.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      });
+  </script>
+
+ <section class="py-10 px-2 bg-white">
+  <h2 class="text-5xl sm:text-4xl md:text-7xl font-bold text-center mt-2 mb-2 tracking-widest"
+    data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+
+   <span class="tracking-[-0.10em]">
+  <span class="text-transparent stroke-black">S</span>
+  <span class="text-yellow-400">E</span>
+  <span class="text-transparent stroke-black">R</span>
+  <span class="text-transparent stroke-black">V</span>
+  <span class="text-transparent stroke-black">I</span>
+  <span class="text-transparent stroke-black">C</span>
+  <span class="text-yellow-400">E</span>
+</span>
+
+
+        
+        <span class=" tracking-[-0.10em] block sm:inline">
+          &nbsp;
+          <span class="text-transparent stroke-black">W</span>
+          <span class="text-yellow-400">E</span>
+        </span>
+
+        <span class="block sm:inline tracking-[-0.10em]">
+          &nbsp;
+          <span class="text-transparent stroke-black">P</span>
+          <span class="text-transparent stroke-black">R</span>
+          <span class="text-transparent stroke-black">O</span>
+          <span class="text-transparent stroke-black">V</span>
+          <span class="text-transparent stroke-black">I</span>
+          <span class="text-transparent stroke-black">D</span>
+          <span class="text-yellow-400">E</span>
+        </span>
+      </span>
+    </span>
+
+  </h2>
+</section>
+
+  <!-- Services Section -->
+  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-4">
+    <!-- Architecture -->
+    <div class="p-6 rounded-lg transition-transform duration-300 hover:-translate-y-1" data-aos="fade-up">
+      <i class="fas fa-city text-yellow-400 text-5xl mb-4"></i>
+      <div class="text-xl font-semibold mb-2">ARCHITECTURE</div>
+      <p class="text-base leading-relaxed">
+        Master planning, infrastructure design, 3D planning.
+      </p>
+    </div>
+
+    <!-- Interior -->
+    <div class="p-6 rounded-lg transition-transform duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+      <i class="fas fa-chair text-yellow-400 text-5xl mb-4"></i>
+      <div class="text-xl font-semibold mb-2">INTERIOR</div>
+      <p class="text-base leading-relaxed">
+        Interior design is the art and science of enhancing interior spaces to achieve a healthier and more aesthetic environment.
+      </p>
+    </div>
+
+    <!-- Engineering -->
+    <div class="p-6 rounded-lg transition-transform duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="400">
+      <i class="fas fa-gears text-yellow-400 text-5xl mb-4"></i>
+      <div class="text-xl font-semibold mb-2">ENGINEERING</div>
+      <p class="text-base leading-relaxed">
+        Structural, mechanical, electrical, and plumbing engineering services for comprehensive project execution.
+      </p>
+    </div>
+
+    <!-- Landscape -->
+    <div class="p-6 rounded-lg transition-transform duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="600">
+      <i class="fas fa-seedling text-yellow-400 text-5xl mb-4"></i>
+      <div class="text-xl font-semibold mb-2">LANDSCAPE</div>
+      <p class="text-base leading-relaxed">
+        Landscape planning to bring balance between natural elements and built environments using science and creativity.
+      </p>
+    </div>
+
+    <!-- Vastu Consultant -->
+    <div class="p-6 rounded-lg transition-transform duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="800">
+      <i class="fas fa-compass text-yellow-400 text-5xl mb-4"></i>
+      <div class="text-xl font-semibold mb-2">VASTU CONSULTANT</div>
+      <p class="text-base leading-relaxed">
+        Vastu design and remedies to align your space with positive energy and traditional principles.
+      </p>
+    </div>
+
+    <!-- MEP Services -->
+    <div class="p-6 rounded-lg transition-transform duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="1000">
+      <i class="fas fa-tools text-yellow-400 text-5xl mb-4"></i>
+      <div class="text-xl font-semibold mb-2">MEP SERVICES</div>
+      <p class="text-base leading-relaxed">
+        Integrated mechanical, electrical, and plumbing systems for smart and efficient infrastructure.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Bricc - Innovative Architectural Designs</title>
+  <meta name="description" content="Leading architectural firm specializing in architecture, interior design, landscaping, and vastu consultation.">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Walbaum&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            amber: {
+              400: '#f7bc3c',
+              500: '#f59e0b',
+              600: '#d97706'
+            }
+          },
+          fontFamily: {
+            cursive: ['Marck Script', 'cursive'],
+            sans: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Scrollbar Hide */
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Bounce Animation */
+    .animate-bounce {
+      animation: bounce 1s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Vertical Writing Mode */
+    .writing-mode-vertical-rl {
+      writing-mode: vertical-rl;
+    }
+    .text-orientation-upright {
+      text-orientation: upright;
+    }
+
+    /* Stroke Text */
+    .stroke-black {
+      -webkit-text-stroke: 1px #000;
+    }
+    
+    /* Fix for mobile side spacing */
+    @media (max-width: 640px) {
+      body, html {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+      }
+      
+      .mobile-full-width {
+        width: 100vw;
+        margin-left: -50vw;
+        left: 50%;
+        position: relative;
+      }
+      
+      .mobile-container {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      
+      .mobile-px-0 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      
+      .mobile-mx-0 {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+ <!-- Navbar -->
+<nav class="absolute top-0 left-0 w-full z-50 py-3 bg-transparent">
+  <div class="flex justify-between items-center w-full px-4 sm:px-6 md:px-8">
+    
+    <!-- Left: Logo and Title -->
+    <div class="flex items-center space-x-3">
+      <div class="h-20 w-20 sm:h-24 sm:w-24 flex items-center justify-center">
+        <img src="DESIGN BRICC LOGO.png" alt="Logo" class="h-full w-full object-cover" />
+      </div>
+      <span class="text-3xl sm:text-3xl font-bold mt-4 sm:mt-0 text-white">DESIGN BRICC</span>
+    </div>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex space-x-4 uppercase font-medium tracking-wide text-[16px]">
+      <a href="index.html" class="relative text-amber-400 after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-amber-400 after:transition-all after:duration-300 hover:after:w-full">
+        Home
+      </a>
+      <a href="about.html" class="relative text-white after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">
+        About Us
+      </a>
+      
+      <!-- Dropdown -->
+      <div class="relative group">
+        <button class="flex items-center text-amber-400 group-hover:hover:underline underline-offset-4">
+          OUR PROJECT
+          <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="absolute left-0 mt-2 w-56 bg-black/95 text-white rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-amber-500/20">
+          <a href="architecture.html" class="block px-4 py-2 hover:bg-neutral-900 hover:text-amber-400">ARCHITECTURE</a>
+          <a href="interior.html" class="block px-4 py-2 hover:bg-neutral-900 hover:text-amber-400">INTERIOR</a>
+          <a href="landscapping.html" class="block px-4 py-2 hover:bg-neutral-900 hover:text-amber-400">LANDSCAPING</a>
+          <a href="vastu.html" class="block px-4 py-2 hover:bg-neutral-900 hover:text-amber-400">VASTU CONSULTANT</a>
+        </div>
+      </div>
+
+      <a href="service.html" class="relative text-white after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">
+        Services
+      </a>
+      <a href="contact.html" class="relative text-white after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">
+        Contact
+      </a>
+    </div>
+
+    <!-- Hamburger -->
+    <button id="hamburgerBtn" class="md:hidden text-white hover:text-amber-400">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Nav -->
+<div id="mobileMenu" class="md:hidden mt-4 px-4 py-6 space-y-2 hidden uppercase font-medium tracking-wide text-[16px] z-50 bg-black text-white rounded-lg shadow-lg">
+  <a href="index.html" class="block py-2 text-amber-400 hover:text-amber-400">Home</a>
+  <a href="about.html" class="block py-2 text-white hover:text-amber-400">About Us</a>
+
+  <!-- Dropdown for "OUR PROJECT" -->
+  <details class="group">
+    <summary class="cursor-pointer py-2 text-amber-400 flex items-center justify-between hover:text-amber-400">
+      OUR PROJECT
+      <svg class="w-4 h-4 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="m6 9 6 6 6-6"/>
+      </svg>
+    </summary>
+    <div class="ml-4 mt-2 space-y-1 text-sm bg-neutral-900 text-white p-4 rounded-md">
+      <a href="architecture.html" class="block text-white hover:text-amber-400">ARCHITECTURE</a>
+      <a href="interior.html" class="block text-white hover:text-amber-400">INTERIOR</a>
+      <a href="landscapping.html" class="block text-white hover:text-amber-400">LANDSCAPING</a>
+      <a href="vastu.html" class="block text-white hover:text-amber-400">VASTU CONSULTANT</a>
+    </div>
+  </details>
+
+  <a href="service.html" class="block py-2 text-white hover:text-amber-400">Services</a>
+  <a href="contact.html" class="block py-2 text-white hover:text-amber-400">Contact</a>
+</div>
+
+</nav>
+
+  <!-- Hero Section -->
+  <section class="relative pt-24 min-h-screen flex flex-col items-center justify-center text-center w-full">
+    <div class="absolute inset-0 z-0 w-full">
+      <img src="hero.jpg" alt="Modern architecture" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
+    </div>
+
+    <div class="relative z-10 px-4 max-w-4xl mx-auto w-full">
+      <div class="inline-block mb-6 px-4 py-1 bg-amber-500/20 backdrop-blur-sm rounded-full">
+        <span class="text-amber-400 text-sm font-medium tracking-widest uppercase">
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 text-white">
+        Innovative <span class="text-amber-400">Architectural</span> Designs
+      </h1>
+
+      <p class="text-base sm:text-lg md:text-xl text-neutral-300 mb-10 max-w-2xl mx-auto">
+        We create spaces that inspire, innovate, and transform the way people live and work.
+      </p>
+
+<div class="inline-flex flex-nowrap justify-center items-center gap-2 sm:gap-3 md:gap-4 text-white text-xs sm:text-sm md:text-base font-medium bg-black/40 backdrop-blur-md py-3 px-4 sm:px-6 md:px-8 rounded-full mb-6 sm:mb-8 md:mb-10 overflow-x-auto whitespace-nowrap">
+  <span class="flex items-center">ARCHITECTURE</span>
+  <span class="text-amber-400">|</span>
+  <span class="flex items-center">INTERIOR</span>
+  <span class="text-amber-400">|</span>
+  <span class="flex items-center">LANDSCAPING</span>
+  <span class="text-amber-400">|</span>
+  <span class="flex items-center">VASTU</span>
+</div>
+
+    <div class="absolute bottom-17 left-0 right-0 flex justify-center animate-bounce">
+      <svg
+        class="w-6 h-6 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+
+  <section class="py-10 pb-0 bg-white w-full">
+    <div class="max-w-7xl mx-auto px-4 w-full">
+      <!-- Flex container for text + image cards -->
+      <div class="flex flex-col lg:flex-row gap-10">
+        
+       <!-- Text Section - Minimal, No Box -->
+<div class="flex items-center justify-center text-center px-4" data-aos="fade-up" data-aos-delay="200">
+  <div>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+      stroke-width="1.5" stroke="currentColor"
+      class="w-10 h-10 text-gray-700 mx-auto mb-4">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+    </svg>
+    <blockquote class="font-serif text-xl sm:text-2xl text-gray-900 italic">
+      "Exceptional architecture is born from a deep understanding of our clients' needs."
+    </blockquote>
+  </div>
+</div>
+
+        
+              
+              
+    <!-- Display Section -->
+<div class="px-4 py-6 w-full">
+  <div class="flex flex-col md:flex-row gap-4 items-center md:items-start justify-center">
+    
+    <!-- Card 1 -->
+    <div class="w-full md:w-[400px] h-[400px] sm:h-[550px] md:h-[650px] bg-white shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="900">
+      <img src="1.jpg" alt="Card Image 1" class="w-full h-full object-cover">
+    </div>
+
+    <!-- Card 2 -->
+    <div class="w-full md:w-[400px] h-[400px] sm:h-[550px] md:h-[650px] shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="1000">
+      <img src="3.jpg" alt="Card Image 2" class="w-full h-full object-cover">
+    </div>
+
+  </div>
+</div>
+
+</section>
+  
+<!-- Gallery Section -->
+<section class="py-16 bg-white w-full">
+  <!-- Title with Stroke and AOS -->
+  <h2 class="text-4xl sm:text-6xl md:text-7xl font-bold text-center mt-10 mb-12 tracking-widest"
+    data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+    <span class="text-transparent stroke-black">W</span>
+    <span class="text-yellow-400">E</span>
+    <span class="text-transparent stroke-black">&nbsp;D</span>
+    <span class="text-transparent stroke-black">E</span>
+    <span class="text-yellow-400">S</span>
+    <span class="text-transparent stroke-black">I</span>
+    <span class="text-transparent stroke-black">G</span>
+    <span class="text-transparent stroke-black">N</span>
+  </h2>
+
+  <style>
+    .stroke-black {
+      -webkit-text-stroke: 1px #000;
+    }
+  </style>
+
+
+ <section class="max-w-screen-2xl mx-auto py-12 px-3 w-full">
+  <div id="scrollContainer"
+    class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide sm:justify-center pr-8 w-full"> <!-- Added pr-8 -->
+
+    <!-- Cards -->
+    <div class="relative flex-shrink-0 w-[45vw] sm:w-[180px] h-[400px] sm:h-[450px] rounded-md shadow-lg overflow-hidden snap-start">
+      <img src="redidential.jpg" alt="Residential" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+      <span class="absolute text-white text-xl font-bold uppercase px-2 py-1 drop-shadow-lg"
+        style="top: 61%; right: 12px; transform-origin: right; transform: translateY(-50%) rotate(270deg); white-space: nowrap;">
+        RESIDENTIAL
+      </span>
+    </div>
+
+    <div class="relative flex-shrink-0 w-[45vw] sm:w-[180px] h-[400px] sm:h-[450px] rounded-md shadow-lg overflow-hidden snap-start">
+      <img src="COMMERCIAL1.jpg" alt="Commercial" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+      <span class="absolute text-white text-xl font-bold uppercase px-2 py-1 drop-shadow-lg"
+        style="top: 58%; right: 12px; transform-origin: right; transform: translateY(-50%) rotate(270deg); white-space: nowrap;">
+        COMMERCIAL
+      </span>
+    </div>
+
+    <div class="relative flex-shrink-0 w-[45vw] sm:w-[180px] h-[400px] sm:h-[450px] rounded-md shadow-lg overflow-hidden snap-start">
+      <img src="OFFICE1.jpg" alt="Office" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+      <span class="absolute text-white text-xl font-bold uppercase px-2 py-1 drop-shadow-lg"
+        style="top: 72%; right: 12px; transform-origin: right; transform: translateY(-50%) rotate(270deg); white-space: nowrap;">
+        OFFICE
+      </span>
+    </div>
+
+    <div class="relative flex-shrink-0 w-[45vw] sm:w-[180px] h-[400px] sm:h-[450px] rounded-md shadow-lg overflow-hidden snap-start">
+      <img src="INTERIOR.jpeg.jpg" alt="Interior" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+      <span class="absolute text-white text-xl font-bold uppercase px-2 py-1 drop-shadow-lg"
+        style="top: 68%; right: 12px; transform-origin: right; transform: translateY(-50%) rotate(270deg); white-space: nowrap;">
+        INTERIOR
+      </span>
+    </div>
+
+    <div class="relative flex-shrink-0 w-[45vw] sm:w-[180px] h-[400px] sm:h-[450px] rounded-md shadow-lg overflow-hidden snap-start">
+      <img src="landscapping.jpg" alt="Landscaping" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+      <span class="absolute text-white text-xl font-bold uppercase px-2 py-1 drop-shadow-lg"
+        style="top: 55%; right: 12px; transform-origin: right; transform: translateY(-50%) rotate(270deg); white-space: nowrap;">
+        LANDSCAPING
+      </span>
+    </div>
+
+    <div class="relative flex-shrink-0 w-[45vw] sm:w-[180px] h-[400px] sm:h-[450px] rounded-md shadow-lg overflow-hidden snap-start">
+      <img src="vastu.jpg" alt="Vastu" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+      <span class="absolute text-white text-xl font-bold uppercase px-2 py-1 drop-shadow-lg"
+        style="top: 71%; right: 12px; transform-origin: right; transform: translateY(-50%) rotate(270deg); white-space: nowrap;">
+        VASTU
+      </span>
+    </div>
+
+    <div class="relative flex-shrink-0 w-[45vw] sm:w-[180px] h-[400px] sm:h-[450px] rounded-md shadow-lg overflow-hidden snap-start">
+      <img src="SHOWROOM.jpg" alt="Showroom" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+      <span class="absolute text-white text-xl font-bold uppercase px-2 py-1 drop-shadow-lg"
+        style="top: 58%; right: 12px; transform-origin: right; transform: translateY(-50%) rotate(270deg); white-space: nowrap;">
+        SHOWROOM
+      </span>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const container = document.getElementById("scrollContainer");
+
+  if (window.innerWidth < 768 && container) {
+    let scrollAmount = 0;
+    const cardWidth = window.innerWidth * 0.45; // 45vw in px
+    const gap = 16; // gap-4 in px
+    const scrollStep = cardWidth + gap;
+
+    // Adjust speed: reduce interval (e.g., from 3000ms to 1500ms)
+    const intervalTime = 1500;
+
+    setInterval(() => {
+      const maxScroll = container.scrollWidth - container.clientWidth;
+
+      scrollAmount += scrollStep * 1.5; // increase scroll step (1.5x)
+
+      if (scrollAmount > maxScroll) {
+        scrollAmount = 0;
+      }
+
+      container.scrollTo({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    }, intervalTime);
+  }
+</script>
+
+</section>
+
+  <!-- Map Section -->
+  <section id="location" class="py-4 px-4 bg-neutral-100 relative w-full">
+    <div class="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent"></div>
+    <div class="absolute -top-10 left-20 w-40 h-40 bg-amber-400/10 rounded-full blur-3xl"></div>
+    <div class="w-full h-[450px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white relative">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50 z-10 pointer-events-none"></div>
+      <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3743.042051627621!2d85.83502497490656!3d20.25709068120612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe3ce771a7fc395f%3A0x87b9b42477450e40!2sDesign%20Bricc!5e0!3m2!1sen!2sin!4v1745477241914!5m2!1sen!2sin" 
+  width="100%" 
+  height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+
+      <div class="mt-8 flex flex-col md:flex-row justify-center gap-6">
+        <div class="flex items-center bg-white p-4 rounded-xl shadow-lg">
+          <div class="w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-500"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h3 class="font-medium text-neutral-900">Address</h3>
+            <p class="text-neutral-600">123 Architecture St, San Francisco, CA</p>
+          </div>
+        </div>
+
+        <div class="flex items-center bg-white p-4 rounded-xl shadow-lg">
+          <div class="w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-500"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-medium text-neutral-900">Phone</h3>
+            <p class="text-neutral-600">707-775-2817</p>
+          </div>
+        </div>
+
+        <div class="flex items-center bg-white p-4 rounded-xl shadow-lg">
+          <div class="w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-500"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <div>
+            <h3 class="font-medium text-neutral-900">Email</h3>
+            <p class="text-neutral-600">yougesmitap@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-32 bg-fixed bg-center bg-cover w-full" style="background-image: url('https://images.unsplash.com/photo-1563697599-f9a7b6843285?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-white mb-6">Get in Touch</h2>
+      <p class="text-lg text-white mb-8">We would love to hear from you! Whether you have a question, suggestion, or just want to say hello, feel free to reach out to us.</p>
+      <a href="contact.html" class="inline-block px-8 py-3 border-2 border-white text-white text-lg font-semibold rounded-lg hover:bg-white hover:text-gray-800 transition duration-300">
+        Contact Us
+      </a>
+    </div>
+  </section>
+  
+  
+
+  <!-- Floating WhatsApp Button -->
+<a href="https://wa.me/917008427070" target="_blank"
+    rel="noopener noreferrer"
+    class="fixed bottom-3 right-12 z-50 bg-gradient-to-r from-green-500 to-green-600 text-white p-4 rounded-full shadow-2xl ring-4 ring-white/20 hover:ring-green-200 transition-all duration-300 ease-in-out hover:scale-110"
+    aria-label="Chat on WhatsApp">
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.002 2.998c-7.183 0-13.003 5.822-13.003 13.004 0 2.818.739 5.479 2.146 7.847L2 30l6.301-2.098a13.01 13.01 0 007.701 2.096c7.183 0 13.001-5.818 13.001-13.002 0-3.474-1.353-6.74-3.808-9.195A12.95 12.95 0 0016.002 2.998zm0 23.997a10.972 10.972 0 01-6.465-1.828l-.465-.284-3.732 1.24 1.26-3.634-.301-.48a10.996 10.996 0 119.703 4.986zm5.554-7.51c-.304-.153-1.801-.887-2.08-.987-.28-.1-.483-.153-.685.153-.202.305-.787.986-.964 1.188-.178.2-.356.229-.66.076-.304-.152-1.285-.473-2.448-1.508-.905-.807-1.515-1.805-1.69-2.108-.177-.304-.019-.468.134-.62.137-.136.305-.356.457-.533.152-.177.203-.305.305-.508.102-.203.05-.38-.025-.533-.076-.153-.685-1.652-.939-2.26-.247-.593-.499-.512-.685-.512h-.585c-.203 0-.534.076-.813.38-.279.305-1.07 1.046-1.07 2.55s1.095 2.96 1.247 3.165c.152.203 2.148 3.28 5.203 4.596.727.314 1.296.502 1.739.64.729.232 1.392.2 1.917.122.585-.087 1.801-.732 2.055-1.44.254-.71.254-1.317.178-1.44-.076-.122-.279-.198-.585-.35z" />
+    </svg>
+  </a>
+
+  <!-- Up Arrow Button -->
+  <!-- Example using ⬆ (Upwards Black Arrow) -->
+<button onclick="smoothScrollToTop()" 
+class="fixed bottom-16 right-1 w-9 h-9 bg-yellow-400 hover:bg-yellow-500 text-black text-xl font-bold flex items-center justify-center rounded-full shadow-lg transition duration-300 z-50">
+⬆
+</button>
+
+<!-- JavaScript with custom speed -->
+<script>
+function smoothScrollToTop(speed = 500) {
+const scrollStep = -window.scrollY / (speed / 10);
+const scrollInterval = setInterval(() => {
+if (window.scrollY !== 0) {
+window.scrollBy(0, scrollStep);
+} else {
+clearInterval(scrollInterval);
+}
+}, 10); // 10ms interval
+}
+</script>
+
+ 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+<!-- Footer -->
+<footer id="page-footer" class="relative w-full bg-white text-black text-center font-[Walbaum]">
+  <!-- Inner Container -->
+<div class="relative z-10 w-full px-4 py-10 sm:px-6 sm:py-1">
+
+    <!-- Logo -->
+    <img src="Design Bricc.jpg" alt="Logo" style="width: 300px; height: 140px;" class="mx-auto mb-4" />
+
+    <!-- Company Name -->
+    <h2 class="text-[28px] font-bold mb-4 text-yellow-400">
+      <span class="text-gray-500">D</span>ESIGN
+      <span class="text-gray-500">B</span>RICC
+    </h2>
+
+    <!-- Contact Info -->
+    <div class="flex justify-center items-center flex-wrap gap-1 sm:gap-3 text-lg sm:text-xl mb-1 sm:mb-4">
+      <div class="flex items-center space-x-1 sm:space-x-2">
+        <i class="fas fa-phone text-black text-[18px] sm:text-[20px]"></i>
+        <span class="text-black text-[20px]">7008427070</span>
+      </div>
+
+      <div class="flex items-center space-x-1 sm:space-x-2">
+        <i class="fas fa-envelope text-black text-[18px] sm:text-[20px]"></i>
+        <span class="text-black text-[20px]">designbricc@gmail.com</span>
+      </div>
+    </div>
+
+    <!-- Navigation Links (Slimmed with full font & icon sizes) -->
+    <nav class="flex justify-center flex-wrap gap-x-2 gap-y-1 text-black mb-2 sm:mb-4">
+      <a href="#" class="flex items-center gap-1 hover:text-gray-600">
+        <i class="fa-solid fa-circle text-[0.35rem] text-black"></i>
+        <span class="text-[20px] ml-1">About Us</span>
+      </a>
+      <a href="#" class="flex items-center gap-1 hover:text-gray-600">
+        <i class="fa-solid fa-circle text-[0.35rem] text-black"></i>
+        <span class="text-[20px] ml-1">Our Services</span>
+      </a>
+      <a href="#" class="flex items-center gap-1 hover:text-gray-600">
+        <i class="fa-solid fa-circle text-[0.35rem] text-black"></i>
+        <span class="text-[20px] ml-1">Our Projects</span>
+      </a>
+      <a href="#" class="flex items-center gap-1 hover:text-gray-600">
+        <i class="fa-solid fa-circle text-[0.35rem] text-black"></i>
+        <span class="text-[20px] ml-1">Contact Us</span>
+      </a>
+    </nav>
+
+    <!-- Social Media Icons -->
+<div class="flex justify-center space-x-6 mt-6">
+  <a href="#" class="bg-gray-600 rounded-full w-9 h-9 flex items-center justify-center text-white text-xl hover:scale-110 transition-transform">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="#" class="bg-gray-600 rounded-full w-9 h-9 flex items-center justify-center text-white text-xl hover:scale-110 transition-transform">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="#" class="bg-gray-600 rounded-full w-9 h-9 flex items-center justify-center text-white text-xl hover:scale-110 transition-transform">
+    <i class="fab fa-twitter"></i>
+  </a>
+</div>
+
+    <!-- Footer Bottom Line -->
+    <footer class="py-6 text-center text-lg text-gray-800">
+      &copy; Design Bricc. All rights reserved.
+    </footer>
+  </div>
+</footer>
+
+
+</body>
+</html>
+  <!-- Simple JavaScript for the current year -->
+  <script>
+    // Mobile menu toggle functionality could be added here
+    document.addEventListener('DOMContentLoaded', function() {
+      // You can add JavaScript functionality here
+      
+      // Example: Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80, // Adjust for fixed header
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+  <!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<script>
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileMenuBackground = document.getElementById('mobileMenuBackground');
+
+  // Toggle menu visibility
+  hamburgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    if (mobileMenuBackground) {
+      mobileMenuBackground.classList.toggle('hidden');
+    }
+  });
+
+  // Close menu when clicking background
+  if (mobileMenuBackground) {
+    mobileMenuBackground.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenuBackground.classList.add('hidden');
+    });
+  }
+
+  // Close menu when clicking any link
+  const links = mobileMenu.querySelectorAll('a');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      if (mobileMenuBackground) {
+        mobileMenuBackground.classList.add('hidden');
+      }
+      // Delay to ensure navigation is not blocked
+      setTimeout(() => {
+        window.location.href = link.href;
+      }, 50);
+    });
+  });
+  </script>
+</body>
+</html>
