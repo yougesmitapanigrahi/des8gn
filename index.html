@@ -87,6 +87,20 @@
       -webkit-text-stroke: 1px #000;
     }
     
+    /* Card label positioning */
+    .card-label {
+      position: absolute;
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 0.25rem 0.5rem;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+      transform-origin: right;
+      transform: translateY(-50%) rotate(270deg);
+      white-space: nowrap;
+      right: 12px;
+    }
+    
     /* Fix for mobile side spacing */
     @media (max-width: 640px) {
       body, html {
@@ -116,6 +130,20 @@
       .mobile-mx-0 {
         margin-left: 0 !important;
         margin-right: 0 !important;
+      }
+      
+      /* Improved visibility for card labels on mobile */
+      .card-label {
+        font-size: 1.1rem !important;
+        right: 8px !important;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 4px 8px !important;
+        border-radius: 4px;
+      }
+      
+      /* Specific adjustment for VASTU card */
+      .vastu-label {
+        top: 65% !important;
       }
     }
   </style>
@@ -222,7 +250,7 @@
         We create spaces that inspire, innovate, and transform the way people live and work.
       </p>
 
-<div class="inline-flex flex-nowrap justify-center items-center gap-2 sm:gap-3 md:gap-5 text-white text-xs sm:text-sm md:text-base font-medium bg-black/40 backdrop-blur-md py-3 px-4 sm:px-6 md:px-8 rounded-full mb-6 sm:mb-8 md:mb-10 overflow-x-auto whitespace-nowrap">
+<div class="inline-flex flex-nowrap justify-center items-center gap-2 sm:gap-3 md:gap-4 text-white text-xs sm:text-sm md:text-base font-medium bg-black/40 backdrop-blur-md py-3 px-4 sm:px-6 md:px-8 rounded-full mb-6 sm:mb-8 md:mb-10 overflow-x-auto whitespace-nowrap">
   <span class="flex items-center">ARCHITECTURE</span>
   <span class="text-amber-400">|</span>
   <span class="flex items-center">INTERIOR</span>
@@ -317,8 +345,7 @@
     <div class="relative flex-shrink-0 w-[45vw] sm:w-[180px] h-[400px] sm:h-[450px] rounded-md shadow-lg overflow-hidden snap-start">
       <img src="redidential.jpg" alt="Residential" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-      <span class="absolute text-white text-xl font-bold uppercase px-2 py-1 drop-shadow-lg"
-        style="top: 61%; right: 12px; transform-origin: right; transform: translateY(-50%) rotate(270deg); white-space: nowrap;">
+      <span class="card-label text-xl" style="top: 61%;">
         RESIDENTIAL
       </span>
     </div>
@@ -326,8 +353,7 @@
     <div class="relative flex-shrink-0 w-[45vw] sm:w-[180px] h-[400px] sm:h-[450px] rounded-md shadow-lg overflow-hidden snap-start">
       <img src="COMMERCIAL1.jpg" alt="Commercial" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-      <span class="absolute text-white text-xl font-bold uppercase px-2 py-1 drop-shadow-lg"
-        style="top: 58%; right: 12px; transform-origin: right; transform: translateY(-50%) rotate(270deg); white-space: nowrap;">
+      <span class="card-label text-xl" style="top: 58%;">
         COMMERCIAL
       </span>
     </div>
@@ -335,8 +361,7 @@
     <div class="relative flex-shrink-0 w-[45vw] sm:w-[180px] h-[400px] sm:h-[450px] rounded-md shadow-lg overflow-hidden snap-start">
       <img src="OFFICE1.jpg" alt="Office" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-      <span class="absolute text-white text-xl font-bold uppercase px-2 py-1 drop-shadow-lg"
-        style="top: 72%; right: 12px; transform-origin: right; transform: translateY(-50%) rotate(270deg); white-space: nowrap;">
+      <span class="card-label text-xl" style="top: 72%;">
         OFFICE
       </span>
     </div>
@@ -344,8 +369,7 @@
     <div class="relative flex-shrink-0 w-[45vw] sm:w-[180px] h-[400px] sm:h-[450px] rounded-md shadow-lg overflow-hidden snap-start">
       <img src="INTERIOR.jpeg.jpg" alt="Interior" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-      <span class="absolute text-white text-xl font-bold uppercase px-2 py-1 drop-shadow-lg"
-        style="top: 68%; right: 12px; transform-origin: right; transform: translateY(-50%) rotate(270deg); white-space: nowrap;">
+      <span class="card-label text-xl" style="top: 68%;">
         INTERIOR
       </span>
     </div>
@@ -353,8 +377,7 @@
     <div class="relative flex-shrink-0 w-[45vw] sm:w-[180px] h-[400px] sm:h-[450px] rounded-md shadow-lg overflow-hidden snap-start">
       <img src="landscapping.jpg" alt="Landscaping" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-      <span class="absolute text-white text-xl font-bold uppercase px-2 py-1 drop-shadow-lg"
-        style="top: 55%; right: 12px; transform-origin: right; transform: translateY(-50%) rotate(270deg); white-space: nowrap;">
+      <span class="card-label text-xl" style="top: 55%;">
         LANDSCAPING
       </span>
     </div>
@@ -362,8 +385,7 @@
     <div class="relative flex-shrink-0 w-[45vw] sm:w-[180px] h-[400px] sm:h-[450px] rounded-md shadow-lg overflow-hidden snap-start">
       <img src="vastu.jpg" alt="Vastu" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-      <span class="absolute text-white text-xl font-bold uppercase px-2 py-1 drop-shadow-lg"
-        style="top: 71%; right: 12px; transform-origin: right; transform: translateY(-50%) rotate(270deg); white-space: nowrap;">
+      <span class="card-label text-xl vastu-label" style="top: 71%;">
         VASTU
       </span>
     </div>
@@ -371,8 +393,7 @@
     <div class="relative flex-shrink-0 w-[45vw] sm:w-[180px] h-[400px] sm:h-[450px] rounded-md shadow-lg overflow-hidden snap-start">
       <img src="SHOWROOM.jpg" alt="Showroom" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-      <span class="absolute text-white text-xl font-bold uppercase px-2 py-1 drop-shadow-lg"
-        style="top: 58%; right: 12px; transform-origin: right; transform: translateY(-50%) rotate(270deg); white-space: nowrap;">
+      <span class="card-label text-xl" style="top: 58%;">
         SHOWROOM
       </span>
     </div>
